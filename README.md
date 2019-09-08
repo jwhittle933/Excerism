@@ -1,4 +1,4 @@
-## Excersim challenges
+## Excersim Solutions 
 ### In-Progress:
 1) Go
 2) Elixir
