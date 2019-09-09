@@ -1,12 +1,5 @@
 <?php
 
-/*
-This is only a SKELETON file for the "Hamming" exercise. It's been provided as a
-convenience to get you started writing code faster.
-
-Remove this comment before submitting your exercise.
-*/
-
 function distance(string $strandA, string $strandB) : int
 {
     if (strlen($strandA) !== strlen($strandB))
@@ -16,17 +9,7 @@ function distance(string $strandA, string $strandB) : int
 
     $arrA = str_split($strandA);
     $arrB  = str_split($strandB);
-    $uncommon = 0;
+    $result = array_diff_assoc($arrA, $arrB);
 
-    for ($i = 0; $i < count($arrA); $i++ )
-    {
-        if ($arrA[$i] === $arrB[$i])
-        {
-            continue;
-        }
-
-        $uncommon++;
-    }
-
-    return $uncommon;
+    return count($result);
 }

@@ -1,3 +1,12 @@
 pub fn build_proverb(list: &[&str]) -> String {
-    unimplemented!("build a proverb from this list of items: {:?}", list)
+
+    let mut new_v: Vec<&str> = vec![];
+
+    for st in list.iter() {
+        //
+    }
+
+
+
+    String::from("Got it")
 }
