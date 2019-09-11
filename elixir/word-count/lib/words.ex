@@ -11,9 +11,8 @@ defmodule Words do
 
   defp clean_and_split(string) do
     string
-    |> String.replace(~r/[^0-9A-Za-zäöüÄÖÜß-]+/, " ")
     |> String.downcase()
-    |> String.split
+    |> String.split(~r{[^0-9a-zäöüÄÖÜß-]}, trim: true)
   end
 
   defp make([head | tail], map) do
