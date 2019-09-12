@@ -10,6 +10,7 @@ func TestAcronym(t *testing.T) {
 		if actual != test.expected {
 			t.Errorf("Acronym test [%s], expected [%s], actual [%s]", test.input, test.expected, actual)
 		}
+		t.Log("Pass\n")
 	}
 }
 
