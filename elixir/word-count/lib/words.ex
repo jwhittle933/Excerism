@@ -6,23 +6,11 @@ defmodule Words do
   """
   @spec count(String.t()) :: map
   def count(sentence) do
-    sentence |> clean_and_split |> make(%{})
-  end
-
-  defp clean_and_split(string) do
-    string
+    sentence
     |> String.downcase()
     |> String.split(~r{[^0-9a-zäöüÄÖÜß-]}, trim: true)
+    |> Enum.reduce(%{}, fn x, acc ->
+      Map.update(acc, x, 1, &(&1 + 1))
+    end)
   end
-
-  defp make([head | tail], map) do
-    with true <- Map.has_key?(map, head) do
-      make(tail, %{map | head => map[head]+1})
-    else
-      _ ->
-        make(tail, Map.put(map, head, 1))
-    end
-  end
-
-  defp make([], map), do: map
 end
