@@ -9,7 +9,7 @@
 }
 
 @test 'year divisible by 2, not divisible by 4 in common year' {
-  [[ $BATS_RUN_SKIPPED == true  ]] || skip
+  # [[ $BATS_RUN_SKIPPED == true  ]] || skip
   run bash leap.sh 1970
 
   [[ $status -eq 0 ]]

@@ -2,32 +2,26 @@ package raindrops
 
 import "strconv"
 
-
-// Convert ...
+// Convert accepts input integer,
+// checks if input has 3, 5, or 7 as factor,
+// and returns a string
 func Convert(input int) string {
 	var s string
-	f := map[int]bool{1: true}
 
-	for i := 2; i <= input; i++ {
-		if input%i == 0 {
-			f[i] = true
-		}
+	if input%3 == 0 {
+		s += "Pling"
 	}
 
-	if !f[3] && !f[5] && !f[7] {
-		return strconv.Itoa(input)
-	}
-
-	if f[3] {
-		s = "Pling"
-	}
-
-	if f[5] {
+	if input%5 == 0 {
 		s += "Plang"
 	}
 
-	if f[7] {
+	if input%7 == 0 {
 		s += "Plong"
+	}
+
+	if s == "" {
+		return strconv.Itoa(input)
 	}
 
 	return s
